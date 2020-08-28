@@ -1,0 +1,15 @@
+GET http://localhost:3001/api/items
+
+###
+
+POST http://localhost:3001/api/items
+content-type: application/json
+
+{
+    "name": "leche"
+}
+###
+
+DELETE http://localhost:3001/api/items/5f48803e9de2e72e3bb2af82
+
+###
