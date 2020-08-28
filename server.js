@@ -16,7 +16,7 @@ mongoose
 	.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 	.then(() => console.log('mongoDB conectada'))
 	.catch((err) => console.log(err));
-
+//process.env
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('../client/build'));
 	app.get('*', (req, res) => {
