@@ -42,7 +42,13 @@ class ItemModal extends Component {
 						<Form onSubmit={this.onSubmit}>
 							<FormGroup>
 								<Label for="item">Item</Label>
-								<Input type="text" name="name" id="item" placeholder="Add to ShoppingList" onChange={this.onChange} />
+								<Input
+									type="text"
+									name="name"
+									id="item"
+									placeholder="Add to ShoppingList"
+									onChange={this.onChange}
+								/>
 								<Button color="dark" style={{marginTop: '2rem'}} block>
 									Add it
 								</Button>

@@ -1,19 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const path = require('path');
 const items = require('./routes/api/items');
-
+const users = require('./routes/api/users');
+const auth = require('./routes/api/auth');
 const app = express();
-
+const config = require('config');
 //body parser middleware
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use('/api/items', items);
-const db = require('./config/keys').mongoURI;
+app.use('/api/users', users);
+app.use('/api/auth', auth);
+const db = config.get('mongoURI');
 
 mongoose
-	.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
+	.connect(db, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
 	.then(() => console.log('mongoDB conectada'))
 	.catch((err) => console.log(err));
 //process.env

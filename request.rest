@@ -1,12 +1,41 @@
+
 GET http://localhost:3001/api/items
 
 ###
 
-POST http://localhost:3001/api/items
+GET http://localhost:3001/api/users
+
+###
+
+
+POST http://localhost:3001/api/auth/user
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNDlkMzE0MTViZmUxMmMyZGEzYmM5YSIsImlhdCI6MTU5ODY4MTMyMCwiZXhwIjoxNTk4Njg0OTIwfQ.2rXrYrttSngEUXO4L8iISrjK5jD0vA98wSML4Kji6HA
+
+{
+    "id": "5f49d31415bfe12c2da3bc9a"
+}
+###
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNDlkMzE0MTViZmUxMmMyZGEzYmM5YSIsImlhdCI6MTU5ODY4MDgxOCwiZXhwIjoxNTk4Njg0NDE4fQ.93ElzVgfIfMse-V9NUpLLXrIYCULkyiY5XkEMbyTfhk
+
+POST http://localhost:3001/api/users
 content-type: application/json
 
 {
-    "name": "leche"
+    "name": "mati",
+    "email" : "matiaslamela1992@gmail.com",
+    "password": "12345678"
+}
+###
+
+POST http://localhost:3001/api/auth
+content-type: application/json
+
+
+{
+    "email" : "matiaslamela1992@gmail.com",
+    "password": "12345678"
 }
 ###
 
